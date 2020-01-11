@@ -76,8 +76,8 @@ const Profile = ({ classes,match }) => {
 };
 
 const PROFILE_QUERY = gql`
-{
-  user(id:2){
+query($userId:Int!){
+  user(id:$userId){
     id
     username
     dateJoined
