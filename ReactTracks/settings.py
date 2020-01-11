@@ -56,6 +56,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     'http://tracks.njabulombuli.co.za',
+    'http://localhost:3000',
 ]
 
 GRAPHENE = {
@@ -64,6 +65,11 @@ GRAPHENE = {
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
 }
+
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 ROOT_URLCONF = 'ReactTracks.urls'
 
